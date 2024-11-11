@@ -4,4 +4,15 @@
             Sum of my team orders: <apex:outputText value="{!SumOders}" />
         </h1>
     </div>
+    <div>
+        <h1>Liste des commandes</h1>
+        <apex:pageBlock>
+            <apex:pageBlockTable value="{!orders}" var="order">
+                <apex:column value="{!order.CreatedById}" headerValue="Commercial"/>
+                <apex:column value="{!order.EffectiveDate}" headerValue="Date effective"/>
+                <apex:column value="{!order.Status}" headerValue="Statut"/>
+                <apex:column value="{!order.TotalAmount}" headerValue="Montant total"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </div>
 </apex:page>
